@@ -49,9 +49,9 @@ function App() {
           </menu>
           <div id="tab-content">
             <h3>{EXAMPLES[valueTab].title}</h3>
-            <p></p>
+            <p>{EXAMPLES[valueTab].description}</p>
             <pre>
-              <code></code>
+              <code>{EXAMPLES[valueTab].code}</code>
             </pre>
           </div>
         </section>
