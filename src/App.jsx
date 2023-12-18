@@ -3,9 +3,10 @@ import Header from "./components/Header/Header";
 import { CoreConcept } from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 import { useState } from "react";
+import { EXAMPLES } from "./data/data";
 
 function App() {
-  const [valueTab, setValueTab] = useState("Please select a tab");
+  const [valueTab, setValueTab] = useState("components");
 
   const handleClick = (selectedItem) => {
     setValueTab(selectedItem);
@@ -35,18 +36,24 @@ function App() {
         <section id="examples">
           <h2>Example</h2>
           <menu>
-            <TabButton onSelectTab={() => handleClick("Compoent")}>
-              Component
+            <TabButton onSelectTab={() => handleClick("components")}>
+              Components
             </TabButton>
-            <TabButton onSelectTab={() => handleClick("Jsx")}>Jsx</TabButton>
-            <TabButton onSelectTab={() => handleClick("Props")}>
+            <TabButton onSelectTab={() => handleClick("jsx")}>JSX</TabButton>
+            <TabButton onSelectTab={() => handleClick("props")}>
               Props
             </TabButton>
-            <TabButton onSelectTab={() => handleClick("State")}>
+            <TabButton onSelectTab={() => handleClick("state")}>
               State
             </TabButton>
           </menu>
-          {valueTab}
+          <div id="tab-content">
+            <h3>{EXAMPLES[valueTab].title}</h3>
+            <p></p>
+            <pre>
+              <code></code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
